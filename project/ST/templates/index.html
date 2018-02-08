@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+
+    <form action="{{ url_for('index') }}" method="post">
+        <table class="table table-striped">
+
+            <tr>
+                <th>股票代號(Symbol)</th>
+                <th>股票名稱(Name)</th>
+                <th>持股數目(Shares)</th>
+                <th>股票價格(Price)</th>
+                <th>總額(total)</th>
+            </tr>
+
+            {%for stock in stocks%}
+            <tr>
+                <td>{{stock.symbol}}</td>
+                <td>{{stock.name}}</td>
+                <td>{{stock.shares}}</td>
+                <td>{{stock.price}}</td>
+                <td>{{stock.total}}</td>
+            </tr>
+            {%endfor%}
+
+            <tr>
+                <td>CASH</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{cash}}</td>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{total}}</td>
+            </tr>
+
+        </table>
+{% endblock %}
