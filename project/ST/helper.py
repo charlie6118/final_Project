@@ -109,7 +109,7 @@ def lookup(month, symbol):
             count += 1
 
     #insert the element into line_5, line_20, line_60 respectively
-    if len(stock.line_5) < 5:
+    if len(stock.line_20) < 20:
 
         stock_pre = lookup(getPreMonth(month), symbol)
         stock_pre_ = lookup(getPreMonth(getPreMonth(month)), symbol)
